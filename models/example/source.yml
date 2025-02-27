@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: DBT_SCHEMA   # This should match the schema name in Snowflake
+    database: DBT_DEMO  # Replace with your actual database name in Snowflake
+    schema: DBT_SCHEMA  # Ensure it matches the schema in Snowflake
+    tables:
+      - name: SALES_US
+        description: "Sales data for the US market."

@@ -19,3 +19,28 @@ models:
             tests:
                 - unique
                 - not_null
+
+    
+    - name: profit_us
+      description: "This model calculates the total revenue, total cost, and total profit for sales."
+      columns:
+          - name: sales_date
+            description: "The date of the sale."
+            tests:
+                - not_null
+                - unique
+          
+          - name: total_revenue
+            description: "The total revenue generated from sales."
+            tests:
+                - not_null
+
+          - name: total_cost
+            description: "The total cost of goods sold."
+            tests:
+                - not_null
+
+          - name: total_profit
+            description: "The total profit, calculated as revenue minus cost."
+            tests:
+                - not_null
