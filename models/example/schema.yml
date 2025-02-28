@@ -44,3 +44,12 @@ models:
             description: "The total profit, calculated as revenue minus cost."
             tests:
                 - not_null
+
+    
+    - name: sales_us_transformed
+      description: "Transform QUANTITY_SOLD by multiplying it by 2"
+      columns:
+        - name: QUANTITY_SOLD_DOUBLED
+          description: "Doubled quantity sold"
+          tests:
+            - not_null
