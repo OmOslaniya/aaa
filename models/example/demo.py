@@ -7,6 +7,6 @@ def model(dbt, session: Session):
     df = dbt.ref("SALES_US")
 
     # Perform transformation: Multiply QUANTITY_SOLD by 2
-    df = df.with_column("QUANTITY_SOLD_DOUBLED", df["QUANTITY_SOLD"] * 2)
+    df = df.with_column("QUANTITY_SOLD", df["QUANTITY_SOLD"] * 2)
 
     return df

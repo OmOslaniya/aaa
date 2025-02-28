@@ -46,10 +46,10 @@ models:
                 - not_null
 
     
-    - name: sales_us_transformed
+    - name: demo
       description: "Transform QUANTITY_SOLD by multiplying it by 2"
       columns:
-        - name: QUANTITY_SOLD_DOUBLED
+        - name: QUANTITY_SOLD
           description: "Doubled quantity sold"
           tests:
             - not_null
