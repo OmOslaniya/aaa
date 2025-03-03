@@ -4,7 +4,7 @@ from snowflake.snowpark.session import Session
 
 def model(dbt, session: Session):
     # Get source table
-    df = dbt.ref("SALES_US")
+    df = dbt.source("DBT_SCHEMA", "SALES_US")
 
     # Perform transformation: Multiply QUANTITY_SOLD by 2
     df = df.with_column("QUANTITY_SOLD", df["QUANTITY_SOLD"] * 2)
