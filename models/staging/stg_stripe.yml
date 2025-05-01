@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw_stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payments
+        description: "A table of payment transactions from Stripe."
+        columns:
+          - name: id
+            description: "Primary key for payments."
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            description: "Foreign key to orders."
+            tests:
+              - not_null
+          - name: payment_method
+            description: "The payment method used (e.g., credit_card, paypal)."
+          - name: amount
+            description: "Amount paid in USD."
+          - name: payment_date
+            description: "The date the payment was made."

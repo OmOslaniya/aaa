@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: raw_jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: "A table containing customer information from the jaffle shop."
+        columns:
+          - name: id
+            description: "Primary key for customers."
+            tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: "Customer's first name."
+          - name: last_name
+            description: "Customer's last name."
+
+      - name: orders
+        description: "A table of orders placed in the jaffle shop."
+        columns:
+          - name: id
+            description: "Primary key for orders."
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: "Foreign key to customers."
+            tests:
+              - not_null
+          - name: order_date
+            description: "The date the order was placed."
+          - name: status
+            description: "Order status (e.g., completed, pending, cancelled)."
+          - name: amount
+            description: "Order amount in USD."
